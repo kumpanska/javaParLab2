@@ -13,9 +13,8 @@ public class ThreadMin extends Thread{
     @Override
     public void run()
     {
-        int localMinValue = arrClass.findLocalMin(startIndex, endIndex);
-        int localMinIndex = arrClass.findLocalMinIndex(startIndex, endIndex);
-        arrClass.updateMin(localMinValue, localMinIndex);
+        int[] result = arrClass.findLocalMinWithIndex(startIndex, endIndex);
+        arrClass.updateMin(result[0], result[1]);
         arrClass.incThreadCount();
     }
 }

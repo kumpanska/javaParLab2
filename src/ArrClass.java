@@ -26,19 +26,7 @@ public class ArrClass {
         arr[negIndex] = -(random.nextInt(999999) + 1);
     }
 
-    public int findLocalMin(int start, int end)
-    {
-        int localMin = Integer.MAX_VALUE;
-        for (int i = start; i < end; i++) {
-            if (arr[i] < localMin) {
-                localMin = arr[i];
-            }
-        }
-        return localMin;
-    }
-
-    public int findLocalMinIndex(int start, int end)
-    {
+    public int[] findLocalMinWithIndex(int start, int end) {
         int localMin = Integer.MAX_VALUE;
         int localMinIndex = -1;
         for (int i = start; i < end; i++) {
@@ -47,7 +35,7 @@ public class ArrClass {
                 localMinIndex = i;
             }
         }
-        return localMinIndex;
+        return new int[]{localMin, localMinIndex};
     }
 
     synchronized public void updateMin(int localMinValue, int localMinIndex) {
