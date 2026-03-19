@@ -3,9 +3,12 @@
 public class Main {
     public static void main(String[] args) {
         int dim = 1000000;
-        int threadNum = 2;
+        int threadNum = 4;
         ArrClass arrClass = new ArrClass(dim, threadNum);
+        long startTimePar = System.currentTimeMillis();
         arrClass.splitPartsAndStartThreads();
+        long endTimePar = System.currentTimeMillis();
+        System.out.println("Time taken: " + (endTimePar - startTimePar) + " ms");
         System.out.println("Minimum value: " + arrClass.getMinValue() + " at index: " + arrClass.getMinIndex());
     }
 }
